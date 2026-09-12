@@ -10,4 +10,6 @@ Route::get('/whoami', function () {
 });
 Route::get('/medicines/filter/{type?}', [MedicineController::class, 'filter']) -> name('medicines.filter');
 
-Route::resource('medicines', MedicineController::class);
+Route::resource('medicines', MedicineController::class)->only([
+    'index', 'show'
+]);
